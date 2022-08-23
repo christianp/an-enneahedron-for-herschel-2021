@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>The Unintentionally Useful Consequences of Playing Games with Maths</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css" id="theme">
+		<link rel="stylesheet" href="graph_app/style.css">
+        <script src="graph_app/main.js" defer></script>
+        <script src="graph_app/embed-graph-app.js" defer></script>
+        <script>
+            graph_app_base_url = 'graph_app/';
+        </script>
+        <script src="presentation.js" type="module"></script>
+    </head>
+    <body>
+        <main>
+            <section tabindex="0" id="title">
+                <h1>The Unintentionally Useful Consequences of Playing Games with Maths</h1>
+                <p>Christian Lawson-Perfect</p>
+            </section>
+
+            <section tabindex="0">
+                <h2>About me</h2>
+                <p>I did maths and further maths A-Level, then a maths Master's degree here at Newcastle.</p>
+                <p>I now work here in the School of Mathematics and Statistics, making an online homework system, among other things.</p>
+            </section>
+
+            <section tabindex="0">
+                <h2>But</h2>
+                <p>I really like playing with maths...</p>
+            </section>
+
+            <section tabindex="0">
+                <h2>The unplanned impact of maths</h2>
+                <p>Surprisingly often, maths invented for no reason other than the fun of it turns out to be very useful.</p>
+            </section>
+
+            <section tabindex="0">
+                <h2>Unintentionally useful maths I won't be talking about today</h2>
+
+                <ul>
+                    <li>Found the Fibonacci numbers in my baby's stacking cups</li>
+                    <li>Used error-correcting codes to memorise a lullaby</li>
+                    <li>Wrote an algorithm for finding graph automorphisms while extending a puzzle</li>
+                </ul>
+            </section>
+
+            <section tabindex="0">
+                <h2>The unintentionally useful maths I <em>will</em> be talking about today</h2>
+
+                <p>One day, I was playing about with a remarkably mathematical shape.</p>
+            </section>
+
+            <section style="--cols: 2">
+                <h2>Platonic solids</h2>
+
+                <div>
+                    <p>A <em>polyhedron</em> is a 3-dimensional shape with flat sides and straight edges.</p>
+                    <p>A <em>Platonic solid</em> is a solid whose faces are all regular polygons, with the same number of faces meeting at each vertex.</p>
+                </div>
+                <img src="images/platonic-solids.png"/>
+            </section>
+
+            <section style="--cols: 2">
+                <h2>What can we say about a polyhedron?</h2>
+
+                <img src="images/platonic-solids.png"/>
+
+                <ul>
+                    <li>Number of edges, faces, sides.</li>
+                    <li>Shapes of the faces.</li>
+                    <li>Symmetries.</li>
+                </ul>
+
+            </section>
+
+            <section tabindex="0" style="--cols: 2">
+                <h2>Graphs</h2>
+                <div>
+                    <p>A <em>graph</em> is a collection of points (<em>vertices</em>), and the <em>edges</em> joining them.</p>
+                    <p>It doesn't matter where the points are, or what shape the edges are.</p>
+                </div>
+                <graph-app scene="Cube" mode="edit"></graph-app>
+            </section>
+
+            <section tabindex="0">
+                <h2>What can we say about a graph?</h2>
+                <ul>
+                    <li>How many vertices and edges?</li>
+                    <li>How many edges connecting each vertex?</li>
+                    <li>Does it look like a hedgehog?</li>
+                </ul>
+            </section>
+
+            <section tabindex="0">
+                <h2>What can we say about a graph?</h2>
+                <div>
+                    <p>Can you colour the vertices so that no two neighbours have the same colour?</p>
+                    <p style="text-align: center; margin: 0.5em"><em>OR</em></p>
+                    <p>Can you arrange the vertices on two sides of a line so that no edge stays on the same side of the line?</p>
+                </div>
+                <p>A graph with this property is called <em>bipartite</em>.</p>
+            </section>
+
+            <section tabindex="0">
+                <h2>Let's make a bipartite graph</h2>
+                <graph-app scene="blank" mode="edit"></graph-app>
+            </section>
+
+            <section tabindex="0">
+                <h2>What can we say about a graph?</h2>
+                <p>Can you draw a path which goes along every <em>edge</em> once, and ends where it started?</p>
+                <img src="images/house.png"/>
+            </section>
+
+            <section tabindex="0">
+                <h2>What can we say about a graph?</h2>
+                <p>Can you draw a path which goes along every <em>edge</em> once, and ends where it started?</p>
+                <img src="images/euler.jpg"/>
+                <p>A graph with this property is called <em>Eulerian</em>.</p>
+            </section>
+
+            <section tabindex="0">
+                <h2>The bridges of Königsberg</h2>
+                <img src="images/konigsberg.png"/>
+            </section>
+
+            <section tabindex="0" style="--cols: 2">
+                <h2>What can we say about a graph?</h2>
+                <div>
+                    <p>Can you draw a path which goes through each vertex exactly once, and ends where it started?</p>
+                    <p>A graph with this property is called <em>Hamiltonian</em>.</p>
+                </div>
+                <img src="images/hamilton.png"/>
+            </section>
+
+            <section class="swap">
+                <h2>Let's check if some graphs are Hamiltonian</h2>
+                <graph-app scene="Square"></graph-app>
+            </section>
+
+            <section class="swap">
+                <h2>Let's check if some graphs are Hamiltonian</h2>
+                <graph-app scene="House"></graph-app>
+            </section>
+
+            <section class="swap">
+                <h2>Let's check if some graphs are Hamiltonian</h2>
+                <graph-app scene="Cube"></graph-app>
+            </section>
+
+            <section class="swap">
+                <h2>Let's check if some graphs are Hamiltonian</h2>
+                <graph-app scene="Bipartite even"></graph-app>
+            </section>
+
+            <section class="swap">
+                <h2>Let's check if some graphs are Hamiltonian</h2>
+                <graph-app scene="Bipartite odd"></graph-app>
+            </section>
+
+            <section tabindex="0" style="--cols: 2">
+                <h2>A Theorem</h2>
+                <p>Every bipartite graph with an odd number of vertices is <br><em>non-Hamiltonian</em>.</p>
+                <img src="images/hamilton-cross.png">
+            </section>
+
+            <section tabindex="0">
+                <h2>The Herschel graph</h2>
+                <p>A colleague showed me the <em>Herschel graph</em>, and asked what I could do with it.</p>
+                <p>The Herschel graph is the smallest non-Hamiltonian polyhedral graph.</p>
+            </section>
+
+            <section class="swap">
+                <h2>The Herschel graph</h2>
+                <graph-app scene="Herschel"></graph-app>
+            </section>
+
+            <section tabindex="0">
+                <h2>The Herschel graph</h2>
+                <p><em>Polyhedral</em>?</p>
+            </section>
+
+            <section tabindex="0" style="--cols: 2">
+                <h2>Unintentionally useful maths</h2>
+                <div>
+                    <p>Graphs, groups and polyhedra turn up just about everywhere!</p>
+                    <p>Mathematicians continue to ask silly questions about them.</p>
+                </div>
+                <ul>
+                    <li>Social networks</li>
+                    <li>Epidemiology (!!)</li>
+                    <li>The shapes of viruses</li>
+                    <li>Cryptography</li>
+                </ul>
+            </section>
+        </main>
+    </body>
+</html>

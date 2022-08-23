@@ -1,0 +1,198 @@
+:root {
+    --background: black;
+    --main: white;
+    --col1: hsl(240,70%,65%);
+    --col2: hsl(120,50%,50%);
+    --col3: hsl(60,70%,50%);
+}
+
+.app {
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    transition: background-color 0.2s;
+    background: var(--background);
+    position: relative;
+}
+@media screen and (max-width: 400px) {
+    .app {
+        font-size: 12px;
+    }
+}
+.app .controls {
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: center;
+    font-size: 1em;
+    align-items: center
+}
+.app .previous { grid-area: previous; }
+.app .change-shape { grid-area: change-shape; }
+.app .change-mode { grid-area: change-mode; }
+.app .add { grid-area: add; }
+.app .move { grid-area: move; }
+.app .delete { grid-area: delete; }
+.app .undo { grid-area: undo; }
+.app .redo { grid-area: redo; }
+.app .next { grid-area: next; }
+.app .current-scene { grid-area: current-scene; }
+.app .num-points-text {grid-area: num-points-text; }
+.app .num-points-buttons {grid-area: num-points-buttons; }
+.app .randomise { grid-area: randomise; }
+.app .controls.play {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: ". change-mode";
+}
+.app .controls.edit {
+    grid-template-columns: repeat(4,auto) 1fr repeat(3,auto);
+    grid-template-areas: "add move delete change-shape . undo redo change-mode";
+}
+.app .controls.play.random {
+    grid-template-columns: 1fr auto auto auto;
+    grid-template-areas: "current-scene num-points-text num-points-buttons randomise";
+    grid-gap: 0.5em;
+}
+@media screen and (max-width: 450px) {
+    .app .controls.play.random {
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "current-scene current-scene current-scene" 
+            "num-points-text num-points-buttons randomise"
+        ;
+        grid-gap: 0.5em;
+    }
+    .app .controls.play.random button {
+        font-size: 1em;
+    }
+}
+
+.app .num-points-buttons {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 0.2em;
+  height: 100%;
+}
+.app .num-points-buttons button {
+  padding: 0.1em 1em;
+  width 100%;
+}
+.app .controls {
+    color: var(--main);
+}
+
+.app button {
+    line-height: 1em;
+    border: none;
+    padding: 1em;
+    font-size: 1em;
+    color: var(--main);
+    background: var(--background);
+}
+.app button:hover {
+    background: yellow;
+    color: black;
+}
+.app button:focus {
+    background: yellow;
+    color: black;
+}
+.app button.active {
+    background: darkblue;
+    color: var(--main);
+}
+
+
+.app svg {
+    width: 100%;
+    height: 100%;
+}
+.app .point {
+    cursor: pointer;
+}
+.app .point circle {
+    transition: r 0.2s, fill 0.2s;
+    stroke-width: 0.1;
+}
+.app .point:focus {
+    outline: none;
+}
+.app .point:focus circle {
+    stroke: var(--col2);
+}
+.app .point .label {
+    text-anchor: middle;
+    dominant-baseline: central;
+    fill: var(--background);
+    font-family: sans-serif;
+    font-size: 0.8px;
+}
+.app .point.in-path circle {
+    fill: var(--col1);
+}
+.app .edge.in-path {
+    stroke-dasharray: 0.3 0.1;
+    stroke-width: 0.3;
+    stroke: var(--col1);
+}
+.app .edge:not(.in-path).can-move-along {
+    stroke-dasharray: 0.1 0.3;
+}
+.app .edge:not(.in-path).can-move-along.moving-along {
+    stroke-dasharray: 0.3 0.1;
+}
+.app .point circle {
+    fill: var(--main);
+    stroke: var(--background);
+}
+.app .point.colour-1 circle {
+    fill: var(--col3);
+}
+
+.app .point circle:focus, .app.clp .point:hover {
+    fill: var(--col1);
+}
+.app .point.selected circle {
+    fill: var(--col2);
+}
+.app .point.hovered circle {
+    fill: var(--col2);
+}
+
+.app .edge {
+    stroke-width: 0.1;
+    transition: stroke-width 0.2s, stroke 0.2s, stroke-dasharray 0.2s;
+    stroke-dasharray: 0.4 0;
+    fill: none;
+}
+.app .edge.new-edge {
+    stroke-dasharray: 0.1 0.1;
+}
+.app .edge {
+    stroke: var(--main);
+}
+.app .edge.selected {
+    stroke-width: 0.05;
+    stroke: gray;
+    stroke-dasharray: 1 0.3;
+}
+.app text {
+    font-size: 1px;
+    user-select: none;
+}
+
+.app .hamilton {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  height: 30vh;
+}
+@media screen and (orientation: portrait) {
+    .app .hamilton {
+        height: 15vh;
+    }
+}
+  
+

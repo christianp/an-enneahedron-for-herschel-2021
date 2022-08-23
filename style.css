@@ -1,0 +1,89 @@
+:root {
+    --bg-color: black;
+    --text-color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 5vh;
+    font-family: sans-serif;
+}
+body {
+    margin: 0;
+}
+main {
+    overflow: hidden;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    display: grid;
+    justify-content: center;
+    grid-auto-flow: row;
+    scrollbar-color: var(--main) var(--background);
+}
+
+main > section {
+    background: var(--bg-color);
+    color: var(--text-color);
+    width: 100vw;
+    height: 100vh;
+    padding: 3vh calc((100vw - 16/9*100vh)/2);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    scroll-snap-align: center;
+    overflow: hidden;
+    --cols: 1;
+    grid-template-columns: repeat(var(--cols),1fr);
+    grid-gap: 1em;
+    grid-template-rows: max-content;
+}
+#title {
+    align-content: center;
+}
+main > section > :first-child {
+    align-self: start;
+}
+@media (max-aspect-ratio: 16/9) {
+    html {
+        font-size: calc(9/16*5vw);
+    }
+    main > section {
+        padding: calc((100vh - 9/16*100vw)/2) 3vw;
+    }
+}
+
+main > section:focus {
+    outline: none;
+}
+h1,h2,h3,h4,h5,h6 {
+    text-align: center;
+    grid-column: 1 / -1;
+    margin: 0.5rem 0 0 0;
+}
+p {
+    line-height: 1.5em;
+    max-width: 30em;
+}
+em {
+    font-weight: bold;
+}
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+ul {
+    margin: 0;
+}
+
+li ~ li {
+    margin-top: 1em;
+}
+
+.app {
+    overflow: hidden;
+}
