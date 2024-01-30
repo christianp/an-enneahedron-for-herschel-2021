@@ -22,10 +22,13 @@
 
             <section tabindex="0">
                 <h2>About me</h2>
+                <img src="images/clp-montage.svg">
+                <!--
                 <p>I did maths and further maths A-Level, then a maths Master's degree here at Newcastle.</p>
-                <p>I now work here in the School of Mathematics and Statistics, making an online homework system, among other things.</p>
+                <p>I now work here in the School of Mathematics, Statistics and Physics, making an online homework system, among other things.</p>
+                -->
             </section>
-
+<!--
             <section tabindex="0">
                 <h2>But</h2>
                 <p>I really like playing with maths...</p>
@@ -35,7 +38,7 @@
                 <h2>The unplanned impact of maths</h2>
                 <p>Surprisingly often, maths invented for no reason other than the fun of it turns out to be very useful.</p>
             </section>
-
+-->
             <section tabindex="0">
                 <h2>Unintentionally useful maths I won't be talking about today</h2>
 
@@ -57,15 +60,15 @@
 
                 <div>
                     <p>A <em>polyhedron</em> is a 3-dimensional shape with flat sides and straight edges.</p>
-                    <p>A <em>Platonic solid</em> is a solid whose faces are all regular polygons, with the same number of faces meeting at each vertex.</p>
+                    <p>A <em>Platonic solid</em> is a solid whose faces are all the same regular polygon, with the same number of faces meeting at each vertex.</p>
                 </div>
-                <img src="images/platonic-solids.png"/>
+                <img src="images/platonic-solids.png" style="height: auto"/>
             </section>
 
             <section style="--cols: 2">
                 <h2>What can we say about a polyhedron?</h2>
 
-                <img src="images/platonic-solids.png"/>
+                <img src="images/platonic-solids.png" style="height: auto"/>
 
                 <ul>
                     <li>Number of edges, faces, sides.</li>
@@ -79,7 +82,7 @@
                 <h2>Graphs</h2>
                 <div>
                     <p>A <em>graph</em> is a collection of points (<em>vertices</em>), and the <em>edges</em> joining them.</p>
-                    <p>It doesn't matter where the points are, or what shape the edges are.</p>
+                    <p>It doesn't matter where the points are, or what shape the edges are, or if the edges cross.</p>
                 </div>
                 <graph-app scene="Cube" mode="edit"></graph-app>
             </section>
@@ -108,17 +111,16 @@
                 <graph-app scene="blank" mode="edit"></graph-app>
             </section>
 
-            <section tabindex="0">
+            <section tabindex="0" style="--cols:2">
                 <h2>What can we say about a graph?</h2>
-                <p>Can you draw a path which goes along every <em>edge</em> once, and ends where it started?</p>
-                <img src="images/house.png"/>
-            </section>
-
-            <section tabindex="0">
-                <h2>What can we say about a graph?</h2>
-                <p>Can you draw a path which goes along every <em>edge</em> once, and ends where it started?</p>
-                <img src="images/euler.jpg"/>
-                <p>A graph with this property is called <em>Eulerian</em>.</p>
+                <div>
+                    <p>Can you draw a path which goes along every <em>edge</em> once, and ends where it started?</p>
+                    <p>A graph with this property is called <em>Eulerian</em>.</p>
+                </div>
+                <figure>
+                    <img src="images/euler.jpg"/>
+                    <figcaption>Leonhard Euler</figcaption>
+                </figure>
             </section>
 
             <section tabindex="0">
@@ -132,33 +134,53 @@
                     <p>Can you draw a path which goes through each vertex exactly once, and ends where it started?</p>
                     <p>A graph with this property is called <em>Hamiltonian</em>.</p>
                 </div>
-                <img src="images/hamilton.png"/>
+                <figure>
+                    <img src="images/hamilton.png"/>
+                    <figcaption>William Rowan Hamilton</figcaption>
+                </figure>
             </section>
 
-            <section class="swap">
+            <section tabindex="0" style="--cols: 2">
+                <h2>By the way</h2>
+                <figure>
+                    <img src="images/sophie-germain.jpg">
+                    <figcaption>Sophie Germain</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/yasuaki.jpg">
+                    <figcaption>Aida Yasuaki</figcaption>
+                </figure>
+            </section>
+
+            <section tabindex="0" class="swap">
+                <h2>The Icosian game</h2>
+                <graph-app scene="Icosahedron"></graph-app>
+            </section tabindex="0">
+
+            <section tabindex="0" class="swap">
                 <h2>Let's check if some graphs are Hamiltonian</h2>
                 <graph-app scene="Square"></graph-app>
-            </section>
+            </section tabindex="0">
 
-            <section class="swap">
+            <section tabindex="0" class="swap">
                 <h2>Let's check if some graphs are Hamiltonian</h2>
                 <graph-app scene="House"></graph-app>
-            </section>
+            </section tabindex="0">
 
-            <section class="swap">
+            <section tabindex="0" class="swap">
                 <h2>Let's check if some graphs are Hamiltonian</h2>
                 <graph-app scene="Cube"></graph-app>
-            </section>
+            </section tabindex="0">
 
-            <section class="swap">
+            <section tabindex="0" class="swap">
                 <h2>Let's check if some graphs are Hamiltonian</h2>
                 <graph-app scene="Bipartite even"></graph-app>
-            </section>
+            </section tabindex="0">
 
-            <section class="swap">
+            <section tabindex="0" class="swap">
                 <h2>Let's check if some graphs are Hamiltonian</h2>
                 <graph-app scene="Bipartite odd"></graph-app>
-            </section>
+            </section tabindex="0">
 
             <section tabindex="0" style="--cols: 2">
                 <h2>A Theorem</h2>

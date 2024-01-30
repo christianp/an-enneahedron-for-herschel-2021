@@ -1,12 +1,13 @@
-:root {
-    --background: black;
-    --main: white;
-    --col1: hsl(240,70%,65%);
-    --col2: hsl(120,50%,50%);
-    --col3: hsl(60,70%,50%);
+:host(graph-app) {
+    display: inline-block;
 }
 
 .app {
+    --background: white;
+    --main: black;
+    --col1: hsl(240,70%,65%);
+    --col2: hsl(120,50%,50%);
+    --col3: hsl(60,70%,50%);
     font-size: 16px;
     width: 100%;
     height: 100%;
@@ -92,16 +93,19 @@
     background: var(--background);
 }
 .app button:hover {
-    background: yellow;
+    background: var(--col3);
     color: black;
 }
 .app button:focus {
-    background: yellow;
+    background: var(--col3);
     color: black;
 }
 .app button.active {
-    background: darkblue;
+    background: var(--col1);
     color: var(--main);
+}
+.app button:disabled {
+    visibility: hidden;
 }
 
 

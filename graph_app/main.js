@@ -5168,6 +5168,7 @@ var $author$project$Main$blank_scene_coloured = A2($author$project$Main$set_colo
 var $author$project$Main$ArcIn = {$: 'ArcIn'};
 var $author$project$Main$ArcOut = {$: 'ArcOut'};
 var $author$project$Main$Straight = {$: 'Straight'};
+var $elm$core$Basics$cos = _Basics_cos;
 var $elm$core$List$maximum = function (list) {
 	if (list.b) {
 		var x = list.a;
@@ -5278,6 +5279,11 @@ var $author$project$Main$set_shape = F2(
 		var b = _v0.b;
 		return _Utils_Tuple3(a, b, s);
 	});
+var $elm$core$Basics$sin = _Basics_sin;
+var $elm$core$Basics$pi = _Basics_pi;
+var $elm$core$Basics$turns = function (angleInTurns) {
+	return (2 * $elm$core$Basics$pi) * angleInTurns;
+};
 var $author$project$Main$scenes = A2(
 	$elm$core$Basics$composeR,
 	$elm$core$List$indexedMap($author$project$Main$set_color),
@@ -5323,6 +5329,89 @@ var $author$project$Main$scenes = A2(
 					_Utils_Tuple2(6, 8)
 				]),
 			ratio: 4 / 3
+		},
+			{
+			edges: A2(
+				$elm$core$List$map,
+				$author$project$Main$set_shape($author$project$Main$Straight),
+				_List_fromArray(
+					[
+						_Utils_Tuple2(0, 1),
+						_Utils_Tuple2(1, 2),
+						_Utils_Tuple2(2, 3),
+						_Utils_Tuple2(3, 4),
+						_Utils_Tuple2(4, 0),
+						_Utils_Tuple2(0, 5),
+						_Utils_Tuple2(1, 6),
+						_Utils_Tuple2(2, 7),
+						_Utils_Tuple2(3, 8),
+						_Utils_Tuple2(4, 9),
+						_Utils_Tuple2(9, 10),
+						_Utils_Tuple2(5, 11),
+						_Utils_Tuple2(6, 12),
+						_Utils_Tuple2(7, 13),
+						_Utils_Tuple2(8, 14),
+						_Utils_Tuple2(9, 14),
+						_Utils_Tuple2(5, 10),
+						_Utils_Tuple2(6, 11),
+						_Utils_Tuple2(7, 12),
+						_Utils_Tuple2(8, 13),
+						_Utils_Tuple2(10, 15),
+						_Utils_Tuple2(11, 16),
+						_Utils_Tuple2(12, 17),
+						_Utils_Tuple2(13, 18),
+						_Utils_Tuple2(14, 19),
+						_Utils_Tuple2(15, 16),
+						_Utils_Tuple2(16, 17),
+						_Utils_Tuple2(17, 18),
+						_Utils_Tuple2(18, 19),
+						_Utils_Tuple2(19, 15)
+					])),
+			name: 'Icosahedron',
+			point_colours: A2($elm$core$List$repeat, 12, 0),
+			points: function () {
+				var r4 = 6;
+				var r3 = 4;
+				var r2 = 3;
+				var r1 = 1.5;
+				var b = (-1) / 10;
+				var a = 1 / 5;
+				return A2(
+					$elm$core$List$map,
+					function (_v0) {
+						var z = _v0.a;
+						var r = _v0.b;
+						return _Utils_Tuple2(
+							r * $elm$core$Basics$cos(
+								$elm$core$Basics$turns(z + (b / 2))),
+							r * $elm$core$Basics$sin(
+								$elm$core$Basics$turns(z + (b / 2))));
+					},
+					_List_fromArray(
+						[
+							_Utils_Tuple2(0, r1),
+							_Utils_Tuple2(a, r1),
+							_Utils_Tuple2(2 * a, r1),
+							_Utils_Tuple2(3 * a, r1),
+							_Utils_Tuple2(4 * a, r1),
+							_Utils_Tuple2(0, r2),
+							_Utils_Tuple2(a, r2),
+							_Utils_Tuple2(2 * a, r2),
+							_Utils_Tuple2(3 * a, r2),
+							_Utils_Tuple2(4 * a, r2),
+							_Utils_Tuple2(b, r3),
+							_Utils_Tuple2(b + a, r3),
+							_Utils_Tuple2(b + (2 * a), r3),
+							_Utils_Tuple2(b + (3 * a), r3),
+							_Utils_Tuple2(b + (4 * a), r3),
+							_Utils_Tuple2(b, r4),
+							_Utils_Tuple2(b + a, r4),
+							_Utils_Tuple2(b + (2 * a), r4),
+							_Utils_Tuple2(b + (3 * a), r4),
+							_Utils_Tuple2(b + (4 * a), r4)
+						]));
+			}(),
+			ratio: 1
 		},
 			{
 			edges: A2(
